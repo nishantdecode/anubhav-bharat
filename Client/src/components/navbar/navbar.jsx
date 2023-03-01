@@ -17,7 +17,6 @@ import { NavbarContainer, NavbarLogo, CustomMenuIcon } from './navbar.js'
 const pages = ['Home', 'Activities', 'Store', 'Food', 'Blogs', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const options = ['Basket', 'Register', 'Login'];
-//const cpage = 'Home';
 const user = false;
 
 function Navbar() {
