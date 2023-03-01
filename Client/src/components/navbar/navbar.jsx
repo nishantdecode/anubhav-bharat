@@ -1,4 +1,7 @@
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem } from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem,
+        Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { useState } from "react";
+
 import HomeIcon from "@mui/icons-material/Home";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
@@ -7,16 +10,8 @@ import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
 import StoreIcon from '@mui/icons-material/Store';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import InputIcon from '@mui/icons-material/Input';
-import { useState } from "react";
-import {
-    Drawer,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-  } from "@mui/material";
-import logo from '../../logo/logo.jpeg'
+
+import logo from '../../images/logo.jpeg'
 import { NavbarContainer, NavbarLogo, CustomMenuIcon } from './navbar.js'
 
 const pages = ['Home', 'Activities', 'Store', 'Food', 'Blogs', 'Contact'];
@@ -28,11 +23,9 @@ const user = false;
 function Navbar() {
     //User menu functions
     const [anchorElUser, setAnchorElUser] = useState(null);
-
     const handleOpenUserMenu = (event) => {
       setAnchorElUser(event.currentTarget);
     };
-
     const handleCloseUserMenu = () => {
       setAnchorElUser(null);
     };
@@ -48,10 +41,8 @@ function Navbar() {
       ) {
         return;
       }
-
       setMobileMenu({ ...mobileMenu, [anchor]: open });
     };
-
     const list = (anchor) => (
       <Box
         sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -80,18 +71,14 @@ function Navbar() {
         </List>
       </Box>
     );
-  const ButtonStyles = { 
-    my: 0, 
-    display: 'block',
-    mx: 0.5,
-  }
+
   return (
-    <AppBar sx={{ width: '100%', bgcolor: 'white', boxShadow: 1, position:"sticky" }} position="static" disableGutters>
+    <AppBar sx={{ width: '100%', bgcolor: 'white', boxShadow: 1, position:"sticky" }} position="static">
     <NavbarContainer maxWidth="false" disableGutters>
         <Toolbar sx={{width: '100%', height: '100%',}} disableGutters >
 
 
-        <Box sx={{ display: "flex", alignItems: "center" }} disableGutters>
+        <Box sx={{ display: "flex", alignItems: "center" }} >
           <CustomMenuIcon sx={{color:'text.secondary'}} onClick={toggleDrawer("left", true)} />
           <Drawer
             anchor="left"
@@ -107,20 +94,20 @@ function Navbar() {
         <Box sx={{flexGrow: 1, display: { xs: 'none', md: 'none', lg:'flex' }, justifyContent: 'center'}}>
             {pages.map((page,cpage) => {
                     return page==='Home' ? (
-                        <Button variant={'cpages'} key={page} sx={ButtonStyles}>
+                        <Button variant={'cpages'} key={page} sx={{ my: 0, display: 'block', mx: 0.5 }}>
                             {page}
                         </Button>
                     ) : (
-                        <Button variant={'pages'} key={page} sx={ButtonStyles}>
+                        <Button variant={'pages'} key={page} sx={{ my: 0, display: 'block', mx: 0.5 }}>
                             {page}
                         </Button>
                     )
                 }
             )}
         </Box>
-        <Container sx={{ display: { xs: 'flex', md: 'flex', lg:'none' }, flexGrow: 1, justifyContent: 'center', }}>
+        <Box sx={{ display: { xs: 'flex', md: 'flex', lg:'none' }, flexGrow: 1, justifyContent: 'center', }}>
             <img width= "142px" height= "35px" src={logo} href="./" alt="logo" />
-        </Container>
+        </Box>
 
 
         {user ? (
@@ -149,7 +136,7 @@ function Navbar() {
               ))}
             </Menu>
         </Box>) : (
-        <Box>
+        <>
         <Box sx={{ flexGrow: 0, display: { xs: 'flex', md:'none'}, justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'none', lg:'flex'}, justifyContent: 'center'}}>
                 <ShoppingBasketIcon sx={{color: 'primary.main', height:"100%"}} />
@@ -182,7 +169,7 @@ function Navbar() {
             </Container>
             <Button variant="register" sx={{display: { xs: 'flex', md: 'flex' }}} >Register</Button>
         </Box>
-        </Box>
+        </>
         )}
         
 

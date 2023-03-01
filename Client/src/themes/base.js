@@ -138,11 +138,7 @@ const components = {
             {
                 props: { variant: 'register' },
                 style: {
-                    display: 'flex',
                     color: '#ffffff',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                     padding: '5px 20px',
                     borderRadius: '10px',
                     boxShadow: 'none',
