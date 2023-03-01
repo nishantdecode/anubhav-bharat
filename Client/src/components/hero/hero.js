@@ -67,17 +67,18 @@ export const InputBox = styled(Box)(({ theme }) => ({
 
 export const CustomButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
-    padding: '5px 20px',
+    padding: '5px 18px',
     borderRadius: '10px',
     boxShadow: 'none',
     backgroundColor: '#FF7722', 
     height: '56px',
+    margin: theme.spacing(0, 1, 0, 0),
     "&:hover": {
         boxShadow: 'none',
         backgroundColor: '#f25d00',
     },
     [theme.breakpoints.down("md")]: {
         height: '56px', 
-        width:'240px',
+        width:'232px',
     },
   }));
