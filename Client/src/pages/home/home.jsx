@@ -4,6 +4,7 @@ import { styled } from "@mui/material";
 
 import Navbar from "../../components/navbar/navbar.jsx";
 import Hero from '../../components/hero/hero.jsx';
+import AboutUs from '../../components/aboutUs/AboutUs.jsx';
 
 const home = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -19,7 +20,7 @@ const home = () => {
             <Hero/>
           </Grid>
           <Grid item xs={12} md={10}>
-            <Hero/>
+            <AboutUs/>
           </Grid>
           <Grid item xs={12} md={10}>
             <Item>xs=12 md=10 lg=10</Item>

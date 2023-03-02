@@ -1,17 +1,6 @@
 import { styled, Box, Button, Typography } from "@mui/material";
 
-export const CustomBox = styled(Box)(({ theme }) => ({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: 'center',
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    },
-  }));
-
-  export const Title = styled(Typography)(({ theme }) => ({
+export const Title = styled(Typography)(({ theme }) => ({
     color: "text.primary",
     fontWeight: "bold",
     maxWidth: '80%',
@@ -20,10 +9,12 @@ export const CustomBox = styled(Box)(({ theme }) => ({
         fontSize: "36px",
       },
     [theme.breakpoints.down("md")]: {
+        textAlign: 'center',
         maxWidth: '100%',
         fontSize: "32px",
       },
     [theme.breakpoints.down("sm")]: {
+        textAlign: 'center',
         maxWidth: '100%',
         fontSize: "28px",
     },
@@ -35,10 +26,12 @@ export const SubTitle = styled(Typography)(({ theme }) => ({
     maxWidth: '80%',
     margin: theme.spacing(4, 0, 4, 0),
     [theme.breakpoints.down("md")]: {
+        textAlign: 'center',
         maxWidth: '100%',
         fontSize: "18px",
       },
     [theme.breakpoints.down("sm")]: {
+        textAlign: 'center',
         maxWidth: '100%',
         fontSize: "16px",
     },
@@ -46,7 +39,7 @@ export const SubTitle = styled(Typography)(({ theme }) => ({
 
 export const HeroImage = styled("img")(({ theme }) => ({ 
     maxWidth: '100%',
-    borderRadius: "50px",
+    borderRadius: "250px",
     [theme.breakpoints.down("md")]: {
         maxWidth: '80%',
         display: "none",
@@ -81,4 +74,4 @@ export const CustomButton = styled(Button)(({ theme }) => ({
         height: '56px', 
         width:'232px',
     },
-  }));
+}));
