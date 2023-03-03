@@ -13,9 +13,9 @@ const heading = {
     heading3: 'Clay & pottery'
 }
 const loc = {
-    loc1: 'North Delhi',
-    loc2: 'South Delhi',
-    loc3: 'New Delhi'
+    loc1: 'Bhopal',
+    loc2: 'Jaipur',
+    loc3: 'Chandni Chowk, New Delhi'
 }
 const title ={
     heading: 'THE BHARAT STORE',
