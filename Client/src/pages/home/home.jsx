@@ -1,17 +1,15 @@
 import React from 'react'
-import { Grid, Box, Paper } from '@mui/material';
-import { styled } from "@mui/material";
+import { Grid, Box } from '@mui/material';
 
 import Navbar from "../../components/navbar/navbar.jsx";
 import Hero from '../../components/hero/hero.jsx';
 import AboutUs from '../../components/aboutUs/AboutUs.jsx';
+import MoreInfo from '../../components/moreInfo/moreInfo.jsx';
+import TouristAttraction from '../../components/touristAttraction/touristAttraction.jsx';
+import BharatStore from '../../components/bharatStore/bharatStore.jsx';
+import FoodChoices from '../../components/foodChoices/foodChoices.jsx';
 
 const home = () => {
-  const Item = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
   return (
       <Box sx={{ flexGrow: 1 }}>
         <Navbar/>
@@ -23,7 +21,19 @@ const home = () => {
             <AboutUs/>
           </Grid>
           <Grid item xs={12} md={10}>
-            <Item>xs=12 md=10 lg=10</Item>
+            <MoreInfo/>
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <TouristAttraction/>
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <BharatStore/>
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <FoodChoices/>
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <Box sx={{height: '50px', backgroundColor:'#CECECE'}}></Box>
           </Grid>
         </Grid>
       </Box>

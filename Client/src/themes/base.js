@@ -98,12 +98,7 @@ const components = {
             {
                 props: { variant: 'outlined' },
                 style: {
-                    display: 'flex',
                     color: 'primary.main',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '18px 24px',
                     borderRadius: '16px',
                     boxShadow: 'none',
                     border: '2px solid',

@@ -33,7 +33,7 @@ const AboutUs = () => {
                 }}
               />
               <Grid container>
-                <Grid item md={12}>
+                <Grid item xs={12} sm={12} md={12} sx={{display:'flex', justifyContent:'center' }}>
                   <Box
                     sx={{
                       position: 'relative',
@@ -41,13 +41,14 @@ const AboutUs = () => {
                       flexDirection: 'column',
                       p: { xs: 3, md: 6 },
                       pr: { md: 0 },
+                      width: {xs:'100%', sm:'70%'}
                     }}
                   >
-                    <Typography color="inherit" sx={{color: 'primary.main', letterSpacing: 4, fontSize:'12px', fontWeight: 'bold', textAlign: 'center'}} gutterBottom>
+                    <Typography color="inherit" sx={{color: 'primary.main', letterSpacing: 4, fontSize:'14px', fontWeight: 'bold', textAlign: 'center'}} gutterBottom>
                       ABOUT US
                     </Typography>
                     <Typography variant="h3" color="backgroung.paper" sx={{textAlign: 'center'}} paragraph>
-                      Our tour plan is to give you an authentic Experience of Incredible India!
+                      Our tour plan is to give you  an authentic Experience of Incredible India!
                     </Typography>
                     <Typography variant="body2" color="backgroung.paper" sx={{textAlign: 'center'}} paragraph>
                       “Monuments and heritage sites are the rich essence of diversity and reflection of our culture”
@@ -66,7 +67,7 @@ const AboutUs = () => {
         </Grid>
         <Grid item xs={12} md={7} lg={8} sx={{display:{ xs:'none', sm:'none', md:'flex', lg:'flex' }}}>
             <Box sx={{display:'flex', justifyContent: 'centre', flexDirection: 'column', pl:15}} >
-                <Typography color="inherit" sx={{color: 'primary.main', letterSpacing: 4, fontSize:'16px', fontWeight: 'bold'}} gutterBottom>
+                <Typography color="inherit" sx={{color: 'primary.main', letterSpacing: 4, fontSize:'14px', fontWeight: 'bold'}} gutterBottom>
                   ABOUT US
                 </Typography>
                 <Typography variant="h2" color="text.primary" paragraph>
