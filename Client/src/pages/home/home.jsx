@@ -8,6 +8,7 @@ import MoreInfo from '../../components/moreInfo/moreInfo.jsx';
 import TouristAttraction from '../../components/touristAttraction/touristAttraction.jsx';
 import BharatStore from '../../components/bharatStore/bharatStore.jsx';
 import FoodChoices from '../../components/foodChoices/foodChoices.jsx';
+import BlogSection from '../../components/blogSection/blogSection.jsx';
 
 const home = () => {
   return (
@@ -31,6 +32,9 @@ const home = () => {
           </Grid>
           <Grid item xs={12} md={10}>
             <FoodChoices/>
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <BlogSection/>
           </Grid>
           <Grid item xs={12} md={10}>
             <Box sx={{height: '50px', backgroundColor:'#CECECE'}}></Box>
