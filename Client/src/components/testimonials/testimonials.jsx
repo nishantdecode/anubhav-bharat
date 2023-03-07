@@ -66,7 +66,7 @@ const Testimonials = () => {
                 Satisfied travellers around the world
             </Typography>
         </Box>
-        <Carousel>
+        <Carousel sx={{mb:5}}>
                 {customers.map((customers1) => {
                     return (
                         <Grid container rowSpacing={2} columnSpacing={0} sx={{mt:1}}>

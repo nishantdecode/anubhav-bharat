@@ -10,6 +10,7 @@ import BharatStore from '../../components/bharatStore/bharatStore.jsx';
 import FoodChoices from '../../components/foodChoices/foodChoices.jsx';
 import BlogSection from '../../components/blogSection/blogSection.jsx';
 import Testimonials from '../../components/testimonials/testimonials.jsx';
+import Footer from '../../components/footer/footer.jsx';
 
 const home = () => {
   return (
@@ -40,10 +41,8 @@ const home = () => {
           <Grid item xs={12} md={10}>
             <Testimonials/>
           </Grid>
-          <Grid item xs={12} md={10}>
-            <Box sx={{height: '50px', backgroundColor:'#CECECE'}}></Box>
-          </Grid>
         </Grid>
+        <Footer/>
       </Box>
   )
 }
