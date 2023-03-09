@@ -7,6 +7,7 @@ import { deepmerge } from '@mui/utils';
 
 import './App.css';
 import Home from "./pages/home/home.jsx";
+import Activities from "./pages/activities/activities.jsx";
 
 import { darkTheme } from "./themes/dark.js";
 import { lightTheme } from "./themes/light.js";
@@ -38,10 +39,10 @@ function App() {
             <CssBaseline enableColorScheme />
             <Routes>
               <Route path="/" element={<Home/>}/>
-              {/* <Route path="/hotels" element={<List/>}/>
-              <Route path="/hotels/:id" element={<Hotel/>}/>
-              <Route path="/login" element={<Login/>}/> */}
-              {/* <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts"/> )} /> */}
+              <Route path="/activities" element={<Activities/>}/>
+              {/* <Route path="/hotels/:id" element={<Hotel/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts"/> )} /> */}
             </Routes>
           </Container>
         </BrowserRouter>

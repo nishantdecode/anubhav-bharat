@@ -66,21 +66,37 @@ const Testimonials = () => {
                 Satisfied travellers around the world
             </Typography>
         </Box>
-        <Carousel sx={{mb:5}}>
-                {customers.map((customers1) => {
-                    return (
-                        <Grid container rowSpacing={2} columnSpacing={0} sx={{mt:1}}>
-                            {customers1.map((customer) => {
-                                return (
-                                    <Grid item xs={12} sm={6} md={4} sx={{display:'flex', justifyContent:'center', p:2 }}>
-                                        <ReviewCard image={customer.img} name={customer.name} loc={customer.loc} rating={customer.rating} review={customer.review} />
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
-                    )
-                })}
+        <Carousel sx={{mb:5, display:{xs:'none', sm:'none', md:'flex', lg:'flex'}, flexDirection:'column'}}>
+            {customers.map((customers1) => {
+                return (
+                    <Grid container rowSpacing={2} columnSpacing={0} sx={{mt:1}}>
+                        {customers1.map((customer) => {
+                            return (
+                                <Grid item xs={12} sm={6} md={4} sx={{display:'flex', justifyContent:'center', p:2 }}>
+                                    <ReviewCard image={customer.img} name={customer.name} loc={customer.loc} rating={customer.rating} review={customer.review} />
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
+                )
+            })}
         </Carousel>
+        <Box sx={{mb:5, display:{xs:'flex', sm:'flex', md:'none', lg:'none'}, flexWrap:'nowrap', overflow:"auto", scrollbarWidth:'0px', pl:1, pb:3, pt:3, pr:3}}>
+            {customers.map((customers1) => {
+                return (
+                    <>
+                        {customers1.map((customer) => {
+                            return (
+                                <Box sx={{m:2}}>
+                                    <ReviewCard image={customer.img} name={customer.name} loc={customer.loc} rating={customer.rating} review={customer.review}/>
+                                </Box>
+                                    
+                            )
+                        })}
+                    </>
+                )
+            })}
+        </Box>
       </>
     )
 }

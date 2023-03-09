@@ -14,7 +14,7 @@ import Footer from '../../components/footer/footer.jsx';
 
 const home = () => {
   return (
-      <Box sx={{ flexGrow: 1 }}>
+      <Box>
         <Navbar/>
         <Grid container spacing={10} justifyContent="center" alignItems="center" my={-4}>
           <Grid item xs={12} md={10}>
