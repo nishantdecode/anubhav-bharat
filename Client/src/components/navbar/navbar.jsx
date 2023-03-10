@@ -13,15 +13,29 @@ import InputIcon from '@mui/icons-material/Input';
 
 import logo from '../../images/logo.jpeg'
 import { NavbarContainer, NavbarLogo, CustomMenuIcon } from './navbar.js'
+import { useNavigate } from 'react-router-dom';
 
 const pages = ['Home', 'Activities', 'Store', 'Food', 'Blogs', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const options = ['Basket', 'Register', 'Login'];
 const user = false;
 
-function Navbar() {
+function Navbar({active="Home"}) {
+    //navbar navigation function
+    let navigate = useNavigate();
+    const handleNavigation = (page) => {
+      let path = "/"
+      if(String(page).localeCompare("Home")){
+        path = "/" + String(page).toLowerCase()
+      } else{
+        path = "/"
+      }
+      navigate(path);
+    };
+
     //User menu functions
     const [anchorElUser, setAnchorElUser] = useState(null);
+
     const handleOpenUserMenu = (event) => {
       setAnchorElUser(event.currentTarget);
     };
@@ -53,7 +67,7 @@ function Navbar() {
           {pages.map(
             (text, index) => (
               <ListItem key={text} disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={()=> handleNavigation(text)}>
                   <ListItemIcon>
                     {index === 0 && <HomeIcon sx={{color: 'primary.main'}} />}
                     {index === 1 && <ModeOfTravelIcon sx={{color: 'primary.main'}}/>}
@@ -91,13 +105,13 @@ function Navbar() {
 
 
         <Box sx={{flexGrow: 1, display: { xs: 'none', md: 'none', lg:'flex' }, justifyContent: 'center'}}>
-            {pages.map((page,cpage) => {
-                    return page==='Home' ? (
-                        <Button variant={'cpages'} key={page} sx={{ my: 0, display: 'block', mx: 0.5 }}>
+            {pages.map((page) => {
+                    return String(page).localeCompare(String(active)) ? (
+                        <Button onClick={()=> handleNavigation(page)} to={"/"+String(page).toLowerCase()} variant={'pages'} key={page} sx={{ my: 0, display: 'block', mx: 0.5 }}>
                             {page}
                         </Button>
                     ) : (
-                        <Button variant={'pages'} key={page} sx={{ my: 0, display: 'block', mx: 0.5 }}>
+                        <Button onClick={()=> handleNavigation(page)} to={"/"+String(page).toLowerCase()} variant={'cpages'} key={page} sx={{ my: 0, display: 'block', mx: 0.5 }}>
                             {page}
                         </Button>
                     )
