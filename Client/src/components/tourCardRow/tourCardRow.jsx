@@ -14,7 +14,7 @@ const TourCardRow = ({data, titleHeading, titleDesc}) => {
                         <Grid container sx={{mt:1}}>
                             {data1.map((card) => {
                                 return (
-                                    <Grid item xs={12} sm={6} md={3} key={card} sx={{display:'flex', justifyContent:'center', pr:2, mb:3 }}>
+                                    <Grid item xs={12} sm={6} md={3} key={card} sx={{display:'flex', justifyContent:'center', pr:2, mb:6 }}>
                                         <TourCard image={card.img} heading={card.Heading} subHeading={card.SubHeading} rating={card.rating} price={card.price}/>
                                     </Grid>
                                 )
