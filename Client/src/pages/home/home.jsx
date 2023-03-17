@@ -3,7 +3,7 @@ import { Grid, Box } from '@mui/material';
 
 import Navbar from "../../components/navbar/navbar.jsx";
 import Hero from '../../components/hero/hero.jsx';
-import AboutUs from '../../components/aboutUs/AboutUs.jsx';
+import AboutUs from '../../components/aboutUs/aboutUs.jsx';
 import MoreInfo from '../../components/moreInfo/moreInfo.jsx';
 import BlogSection from '../../components/blogSection/blogSection.jsx';
 import Testimonials from '../../components/testimonials/testimonials.jsx';

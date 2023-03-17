@@ -3,8 +3,8 @@ import { Grid, Box } from '@mui/material';
 import Navbar from "../../components/navbar/navbar.jsx";
 import Footer from '../../components/footer/footer.jsx';
 import SearchBar from '../../components/searchBar/searchBar.jsx';
-
 import TourCardRow from '../../components/tourCardRow/tourCardRow.jsx';
+
 import Bestseller from '../../data/bestseller.js';
 import CulturalTour from '../../data/culturalTour.js';
 import EcoTour from '../../data/ecoTours.js';

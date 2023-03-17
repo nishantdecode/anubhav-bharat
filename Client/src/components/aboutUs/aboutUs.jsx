@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroImage } from './AboutUs.js'
+import { HeroImage } from './aboutUs.js'
 import { Typography, Paper, Box, Grid, Button } from '@mui/material'
 import Bg from "../../images/Taj.jpeg";
 import Blg from "../../images/taj_interior.jpg";

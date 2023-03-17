@@ -17,6 +17,7 @@ import { darkTheme } from "./themes/dark.js";
 import { lightTheme } from "./themes/light.js";
 import { baseTheme } from "./themes/base.js";
 import { ColorContext } from "./context/ColorContext.js";
+import Tours from './pages/tours/tours';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home/>}/>
               <Route path="/activities" element={<Activities/>}/>
+              <Route path="/activities/:category" element={<Tours/>}/>
               <Route path="/store" element={<Store/>}/>
               <Route path="/food" element={<Food/>}/>
               <Route path="/blogs" element={<Blogs/>}/>
