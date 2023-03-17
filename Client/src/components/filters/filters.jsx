@@ -1,7 +1,13 @@
 import { Paper } from '@mui/material'
 import React from 'react'
 import { useState } from "react"
-import { Box, FormLabel, FormControl, FormGroup, FormControlLabel, FormHelperText, Checkbox } from '@mui/material';
+import { Box, FormLabel, FormControl, FormGroup, FormControlLabel, FormHelperText, Checkbox, Typography } from '@mui/material';
+import Slider from '@mui/material/Slider';
+
+function valueLabelFormat(value) {
+  const units = '₹';
+  return `${units} ${value}`;
+}
 
 const Filters = () => {
   const [category, setCategory] = useState({
@@ -45,12 +51,18 @@ const Filters = () => {
     });
   };
 
+  const [value, setValue] = React.useState(1000);
+
+  const handlePrice = (event, newValue) => {
+      setValue(newValue);
+  };
+
   const { culturalTourism, heritageTourism, ecoTourism, foodTourism, touristAttractions, outdoorActivities } = category;
   const error = [culturalTourism, heritageTourism, ecoTourism, foodTourism, touristAttractions, outdoorActivities ].filter((v) => v).length < 1;
   const { english, hindi, german, russian, chinese, spanish } = language;
   const { oneH, fourH, oneD } = duration;
   return (
-    <Paper sx={{p:1, py:2, boxShadow:1, borderRadius:'16px', m:2, ml:0}}>
+    <Paper sx={{p:1, py:2, boxShadow:1, borderRadius:'16px', mr:2}}>
       <Box sx={{ display: 'flex', flexDirection:'column'}}>
         <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" error={error}>
           <FormLabel component="legend" sx={{fontWeight:'bold', color:'text.primary', pb:1}}>Categories</FormLabel>
@@ -195,6 +207,24 @@ const Filters = () => {
             />
           </FormGroup>
         </FormControl>
+        <Box sx={{ width:'100%', px:3 }}>
+          <Typography id="price" fontWeight="bold" gutterBottom>
+            Price: {valueLabelFormat(value)}
+          </Typography>
+          <Slider
+            size="small"
+            value={value}
+            min={200}
+            step={100}
+            max={4000}
+            getAriaValueText={valueLabelFormat}
+            valueLabelFormat={valueLabelFormat}
+            onChange={handlePrice}
+            valueLabelDisplay="auto"
+            aria-labelledby="price"
+            sx={{color:'primary.main'}}
+          />
+        </Box>
         <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" error={error}>
           <FormLabel component="legend" sx={{fontWeight:'bold', color:'text.primary', pb:1}}>Duration</FormLabel>
           <FormGroup>

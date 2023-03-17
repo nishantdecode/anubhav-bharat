@@ -11,7 +11,7 @@ const ReviewCard = ({image, name, loc, rating, review}) => {
         <Typography variant="body2" color="text.secondary" textAlign="center" sx={{fontWeight: 'regular'}}  paragraph>
             {loc}
         </Typography>
-        <Rating name="half-rating-read" defaultValue={rating} precision={0.5} sx={{mb:2}} readOnly />
+        <Rating name="half-rating-read" defaultValue={Number(rating)} precision={0.5} sx={{mb:2}} readOnly />
         <Typography variant="body2" color="text.primary" textAlign="center" sx={{fontWeight: 'regular'}}  paragraph>
             {review}
         </Typography>

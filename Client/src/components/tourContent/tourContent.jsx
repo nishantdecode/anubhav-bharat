@@ -5,7 +5,7 @@ import BookTourCard from '../bookTourCard/bookTourCard'
 
 const TourContent = () => {
   return (
-    <Grid container justifyContent="center" alignItems="center">
+    <Grid container justifyContent="center" alignItems="flex-start">
       <Grid item xs={12} md={3} lg={3}>
         <Filters/>
       </Grid>
