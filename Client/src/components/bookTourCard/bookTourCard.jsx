@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography, Card, CardMedia, Rating, Button } from '@mui/material'
 
 import LodhiGarden from "../../images/lodhigarden.jpg"
-
+//comment
 const BookTourCard = () => {
   return (
     <Card sx={{ display: 'flex', m:2, borderRadius:'16px', boxShadow:1, height:'300px'}}>
