@@ -50,7 +50,7 @@ function App() {
               <Route path="/store" element={<Store/>}/>
               <Route path="/food" element={<Food/>}/>
               <Route path="/blogs" element={<Blogs/>}/>
-              <Route path="/blogpage" element={<Blogpage/>}/>
+              <Route path="/blog/:blogpage" element={<Blogpage/>}/>
               <Route path="/contact" element={<Contact/>}/>
             </Routes>
           </Container>
