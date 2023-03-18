@@ -2,6 +2,8 @@ import React from "react";
 import { Stack, Grid, Box, Container, TextField } from "@mui/material";
 import { useState} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from "react-router-dom";
+
 
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -12,13 +14,25 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { Title, SubTitle, HeroImage, InputBox, CustomButton } from './hero.js'
 import heroImg from "../../images/Taj2.jpeg";
 
-const options = ['New Delhi', 'North Delhi', 'South Delhi'];
+const locations = ['New Delhi', 'North Delhi', 'South Delhi'];
 
 
 const Hero = () => {
-    const [value, setValue] = useState(options[0]);
+    const [destination, setDestination] = useState(locations[0]);
+    const [category, setCategory] = useState("Cultural Tourism");
     const [inputValue, setInputValue] = useState('');
-    const [selectedDate, setSelectedDate] = useState(dayjs('2022-04-07'));
+    const [date, setDate] = useState(dayjs('2022-04-07'));
+    const [options, setOptions] = useState({
+        time: "",
+        language: "English",
+        price: 1000,
+    });
+
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        navigate("/activities", { state: { destination, date, category, options } });
+    };
 
 return (
     <Grid container spacing={10} justifyContent="center" alignItems="center" >
@@ -38,16 +52,16 @@ return (
 
                     <InputBox sx={{}}>
                         <Autocomplete
-                            value={value}
+                            value={destination}
                             onChange={(event, newValue) => {
-                              setValue(newValue);
+                              setDestination(newValue);
                             }}
                             inputValue={inputValue}
                             onInputChange={(event, newInputValue) => {
                               setInputValue(newInputValue);
                             }}
                             id="Location"
-                            options={options}
+                            options={locations}
                             sx={{ width: '240px', pr: 1, mb: 2}}
                             renderInput={(params) => <TextField {...params} label="Location" />}
                         />
@@ -56,17 +70,17 @@ return (
                             <Stack spacing={4} sx={{ width: '240px', pr: 1, mb: 3 }}>
                             <DesktopDatePicker
                               label="Select Date"
-                              value={selectedDate}
+                              value={date}
                               minDate={dayjs('202-01-01')}
                               onChange={(newSelectedDate) => {
-                                setSelectedDate(newSelectedDate);
+                                setDate(newSelectedDate);
                               }}
                               renderInput={(params) => <TextField {...params} />}
                             />
                             </Stack>
                         </LocalizationProvider>
                           
-                        <CustomButton variant="register" >
+                        <CustomButton variant="register" onClick={handleSearch} >
                             <SearchIcon />
                         </CustomButton>
                     </InputBox> 

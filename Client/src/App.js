@@ -12,12 +12,13 @@ import Store from "./pages/store/store.jsx";
 import Food from "./pages/food/food.jsx";
 import Blogs from "./pages/blogs/blogs.jsx";
 import Contact from "./pages/contact/contact.jsx";
+import Blogpage from "./pages/blogpage/blogpage.jsx"
 
 import { darkTheme } from "./themes/dark.js";
 import { lightTheme } from "./themes/light.js";
 import { baseTheme } from "./themes/base.js";
 import { ColorContext } from "./context/ColorContext.js";
-import Tours from './pages/tours/tours';
+import Tours from './pages/tours/tours.jsx';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
               <Route path="/store" element={<Store/>}/>
               <Route path="/food" element={<Food/>}/>
               <Route path="/blogs" element={<Blogs/>}/>
+              <Route path="/blog/:blogpage" element={<Blogpage/>}/>
               <Route path="/contact" element={<Contact/>}/>
             </Routes>
           </Container>

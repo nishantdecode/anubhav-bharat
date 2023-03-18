@@ -18,7 +18,7 @@ const SitesDisplay = ({data}) => {
         <Grid container rowSpacing={3}>
             {data.map((card) => {
                 return (
-                    <Grid item xs={12} sm={6} md={4} key={card} sx={{display:'flex', justifyContent:'center' }}>
+                    <Grid item xs={12} sm={6} md={4} key={String(card.img)} sx={{display:'flex', justifyContent:'center' }}>
                         <DisplayCard heading={card.Heading} loc={card.SubHeading} image={card.img}/>
                     </Grid>
                 )
