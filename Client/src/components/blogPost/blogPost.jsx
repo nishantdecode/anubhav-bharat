@@ -1,5 +1,6 @@
 import { Grid, Card, CardActionArea, CardMedia, Box, Typography, Button, Avatar } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BlogPost = ({image, heading, desc, avatar, author, date}) => {
   return (
