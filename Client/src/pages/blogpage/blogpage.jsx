@@ -7,6 +7,7 @@ const Blogpage = () => {
   return (
     <Box>
         <Navbar active="Blogs" />
+        <main/>
         <Footer/>
     </Box>
   )
