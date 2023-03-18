@@ -39,7 +39,7 @@ const BlogPost = ({image, heading, desc, avatar, author, date}) => {
                     </Typography>
                     
                         
-                    <Button variant="outlined" sx={{display:{xs:'none', sm:'none', md:'flex', lg:'flex'}, color: 'primary.main', fontWeight:600, width:'100px', height:'50px'}} href ="../../pages/blogpage/blogpage.jsx">Read More</Button>
+                    <Button variant="outlined" sx={{display:{xs:'none', sm:'none', md:'flex', lg:'flex'}, color: 'primary.main', fontWeight:600, width:'100px', height:'50px'}} >Read More</Button>
                 </Box>
             </Grid>
         </Grid>

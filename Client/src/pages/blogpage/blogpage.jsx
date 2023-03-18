@@ -6,7 +6,7 @@ import Footer from '../../components/footer/footer.jsx';
 const Blogpage = () => {
   return (
     <Box>
-        <Navbar active="Blogpage" />
+        <Navbar active="Blogs" />
         <Footer/>
     </Box>
   )
