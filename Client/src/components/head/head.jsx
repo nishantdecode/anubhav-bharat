@@ -5,9 +5,9 @@ import Bg from "../../images/Spiritual.jpg"
 const Head = () => {
   
   return (
-        <Box sx={{display:'flex', width: '100%', height:'400px',justifyContent:'center', backgroundcolor:'Black', opacity:'0.8', alignItems:'center', backgroundImage:`url(${Bg})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", backgroundAttachment: "fixed", borderRadius:'16px'}}>
+        <Box sx={{display:'flex', width: '100%', height:'400px',justifyContent:'center', backgroundcolor:'Black',backgroundBlendMode:'Darken', background: 'rgba(0,0,0,0.5)' ,opacity:'0.8', alignItems:'center', backgroundImage:`url(${Bg})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", backgroundAttachment: "fixed", borderRadius:'16px'}}>
         
-        <Box variant='h2' align='center' color={'white'} fontSize = '3.5rem' fontWeight={500}>Discover the diversity and richness of India: A world within a country.</Box>
+        <Box sx={{align:'center', color:'white', fontWeight:500}}><h1>Discover the diversity and richness of India: A world within a country.</h1></Box>
         </Box>
   )
 }
