@@ -3,11 +3,11 @@ import { Grid, Box } from '@mui/material';
 import Navbar from "../../components/navbar/navbar.jsx";
 import Footer from '../../components/footer/footer.jsx';
 import SearchBar from '../../components/searchBar/searchBar.jsx';
-import TourCardRow from '../../components/tourCardRow/tourCardRow.jsx';
+import TourCardRow from '../../components/cards/tourCardRow/tourCardRow.jsx';
 
 import Bestseller from '../../data/bestseller.js';
-import TourContent from '../../components/tourContent/tourContent.jsx';
-import Testimonials from '../../components/testimonials/testimonials.jsx';
+import TourContent from './tourContent/tourContent.jsx';
+import Testimonials from '../../components/cards/testimonials/testimonials.jsx';
 
 
 const Tours = () => {

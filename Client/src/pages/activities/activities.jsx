@@ -3,14 +3,14 @@ import { Grid, Box } from '@mui/material';
 import Navbar from "../../components/navbar/navbar.jsx";
 import Footer from '../../components/footer/footer.jsx';
 import SearchBar from '../../components/searchBar/searchBar.jsx';
-import TourCardRow from '../../components/tourCardRow/tourCardRow.jsx';
+import TourCardRow from '../../components/cards/tourCardRow/tourCardRow.jsx';
 
 import Bestseller from '../../data/bestseller.js';
 import CulturalTour from '../../data/culturalTour.js';
 import EcoTour from '../../data/ecoTours.js';
 import FoodTour from '../../data/foodTour.js';
 import OutdoorActivities from '../../data/outdoor.js';
-import SitesDisplay from '../../components/sitesDisplay/sitesDisplay.jsx';
+import SitesDisplay from '../../components/cards/displayCardRow/sitesDisplay.jsx';
 import TopAttractions from '../../data/topAttractions.js';
 
 

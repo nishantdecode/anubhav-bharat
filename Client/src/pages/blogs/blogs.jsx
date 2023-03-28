@@ -2,12 +2,11 @@ import React from 'react'
 import { Grid, Box } from '@mui/material';
 import Navbar from "../../components/navbar/navbar.jsx";
 import Footer from '../../components/footer/footer.jsx';
-import BlogSection from '../../components/blogSection/blogSection.jsx';
-import TourCardRow from '../../components/tourCardRow/tourCardRow.jsx';
+import BlogSection from '../../components/cards/blogSection/blogSection.jsx';
+import TourCardRow from '../../components/cards/tourCardRow/tourCardRow.jsx';
 import Bestseller from '../../data/bestseller.js';
-// import Testimonials from '../../components/testimonials/testimonials.jsx';
-import Head from '../../components/head/head.jsx';
-import BlogRow from '../../components/blogRow/blogRow.jsx';
+import Head from './head/head.jsx';
+import BlogRow from './blogRow/blogRow.jsx';
 
 
 const Blogs = () => {

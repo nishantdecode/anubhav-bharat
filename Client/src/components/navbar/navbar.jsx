@@ -25,12 +25,15 @@ function Navbar({active="Home"}) {
     let navigate = useNavigate();
     const handleNavigation = (page) => {
       let path = "/"
-      if(String(page).localeCompare("Home")){
-        path = "/" + String(page).toLowerCase()
-      } else{
+      if(String(page).localeCompare("Store") === 0){
+        window.location.href='https://thebharatstore.com/'
+      } else if(String(page).localeCompare("Home") === 0){
         path = "/"
+        navigate(path);
+      } else{
+        path = "/" + String(page).toLowerCase()
+        navigate(path);
       }
-      navigate(path);
     };
 
     //User menu functions
