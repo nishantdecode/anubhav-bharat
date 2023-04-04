@@ -19,25 +19,25 @@ const Activities = () => {
     <Box>
         <Navbar active="Activities" />
         <Grid container spacing={10} justifyContent="center" alignItems="center" my={-4}>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <SearchBar/>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <TourCardRow data={Bestseller} titleHeading="WAYS TO EXPERIENCE INDIA" titleDesc="The amazing Experiences around India!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <SitesDisplay data={TopAttractions}/>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <TourCardRow data={CulturalTour} titleHeading="CULTURAL TOURS" titleDesc="The amazing Experiences around India!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <TourCardRow data={EcoTour} titleHeading="ECO TOURS" titleDesc="The amazing Experiences around India!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <TourCardRow data={FoodTour} titleHeading="FOOD TOURS" titleDesc="The amazing Experiences around India!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <TourCardRow data={OutdoorActivities} titleHeading="THINGS TO DO" titleDesc="The amazing Experiences around India!" />
           </Grid>
         </Grid>

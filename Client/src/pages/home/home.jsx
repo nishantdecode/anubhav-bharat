@@ -16,32 +16,34 @@ import FoodChoices from '../../data/foodChoices.js';
 import Users from '../../data/testimonials.js';
 
 const Home = () => {
+
+  console.log(Users);
   return (
       <Box>
         <Navbar/>
         <Grid container spacing={10} justifyContent="center" alignItems="center" my={-4}>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <Hero/>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <AboutUs/>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <MoreInfo/>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <DisplayCardRow data={TouristAttractions}  titleHeading="PLACES TO VISIT" titleDesc="The amazing places around India!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <DisplayCardRow data={BharatStore}  titleHeading="THE BHARAT STORE" titleDesc="Welcome to Indian Handicrafts!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <DisplayCardRow data={FoodChoices}  titleHeading="ANUBHAV FOOD SELECTION" titleDesc="Experience best Indian foods!" />
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <BlogSection/>
           </Grid>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} xl={8}>
             <Testimonials data={Users}/>
           </Grid>
         </Grid>

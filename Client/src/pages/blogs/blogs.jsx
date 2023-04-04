@@ -8,26 +8,25 @@ import Bestseller from '../../data/bestseller.js';
 import Head from './head/head.jsx';
 import BlogRow from './blogRow/blogRow.jsx';
 
-
 const Blogs = () => {
   return (
     <Box>
       <Navbar active="Blogs" />
       <Grid container spacing={10} justifyContent="center" alignItems="center" my={-4}>
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={10} xl={8}>
           <Head />
         </Grid>
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={10} xl={8}>
           <BlogRow/>
         </Grid>
-        <Grid item xs={12} md={10}>
-          <BlogSection />
+        <Grid item xs={12} md={10} xl={8}>
+          <BlogSection/>
         </Grid>
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={10} xl={8}>
           <TourCardRow data={Bestseller} titleHeading="WAYS TO EXPERIENCE INDIA" titleDesc="The amazing Experiences around India!" />
         </Grid>
       </Grid>
-      <Footer />
+      <Footer/>
     </Box>
   )
 }

@@ -1,4 +1,4 @@
-export const languages = [
+export const languageOptions = [
     {
       label: "English",
       value: "english"
@@ -25,7 +25,7 @@ export const languages = [
     }
 ];
   
-export const duration = [
+export const durationOptions = [
     {
       label: "Upto 1 hour",
       value: "1"

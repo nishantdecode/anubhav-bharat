@@ -8,7 +8,6 @@ import { deepmerge } from '@mui/utils';
 import './App.css';
 import Home from "./pages/home/home.jsx";
 import Activities from "./pages/activities/activities.jsx";
-import Store from "./pages/store/store.jsx";
 import Food from "./pages/food/food.jsx";
 import Blogs from "./pages/blogs/blogs.jsx";
 import Contact from "./pages/contact/contact.jsx";
@@ -45,9 +44,8 @@ function App() {
             <CssBaseline enableColorScheme />
             <Routes>
               <Route path="/" element={<Home/>}/>
-              <Route path="/activities" element={<Activities/>}/>
-              <Route path="/activities/:category" element={<Tours/>}/>
-              <Route path="/store" element={<Store/>}/>
+              <Route path="/:destination" element={<Activities/>}/>
+              <Route path="/:destination/:category" element={<Tours/>}/>
               <Route path="/food" element={<Food/>}/>
               <Route path="/blogs" element={<Blogs/>}/>
               <Route path="/blog/:blogpage" element={<Blogpage/>}/>

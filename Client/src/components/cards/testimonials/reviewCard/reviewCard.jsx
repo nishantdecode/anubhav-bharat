@@ -3,7 +3,7 @@ import React from 'react'
 
 const ReviewCard = ({image, name, loc, rating, review}) => {
   return (
-    <Box sx={{display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', width:'300px', minHeight:'400px', backgroundColor:'white',p:2, boxShadow:1, borderRadius:'16px'}}>
+    <Box sx={{display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', width:'300px', minWidth:'250px', minHeight:'400px', backgroundColor:'white',p:2, boxShadow:1, borderRadius:'16px'}}>
         <Avatar alt="User" src={image} sx={{height:'100px', width:'100px', mb:3}} />
         <Typography variant="body2" color="text.primary" textAlign="center" sx={{fontWeight: 'bold'}} gutterBottom>
             {name}

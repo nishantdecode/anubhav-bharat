@@ -1,49 +1,77 @@
-import React from 'react'
+/** @jsxImportSource @emotion/react */
+import { useInView } from 'react-intersection-observer';
 import { Box, Typography, Card, CardMedia, Rating, Button } from '@mui/material'
 
-import LodhiGarden from "../../../images/lodhigarden.jpg"
-
-const BookTourCard = () => {
+const BookTourCard = ({image, tourTitle, tourLocation, tourDescription, reviews, rating, price, animation}) => {
+  const { ref, inView } = useInView();
   return (
-    <Card sx={{ display: 'flex', ml:2, borderRadius:'16px', boxShadow:1, height:'300px'}}>
-      <CardMedia
-        component="img"
-        sx={{ display:'flex', width:'30%', height:'300px' }}
-        image={LodhiGarden}
-        alt="LodhiGarden"
-      />  
-      <Box sx={{ display: 'flex', flexDirection: 'column', height:'300px', p:2}}>
-        <Box sx={{ display:'flex', flexDirection:'column', height:'20%', px: 2, pb: 1 }}>
-          <Typography component="div" variant="h4" fontWeight="bold">
-            New Delhi and Old Delhi City Tour
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            Delhi
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', flexDirection:'row', alignItems: 'flex-end', height:'80%', px: 2, pb: 1 }}>
-          <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', pr:2}}>
-            <Typography variant="subtitle1" color="text.secondary" sx={{lineHeight:1.4, textOverflow:'ellipsis'}} component="div">
-              This diversity is also visible in the spheres of religion. The major religions of India 
-              are Hinduism (majority religion), Islam (largest minority religion), Sikhism, Christianity,
-               Buddhism, Jainism, Zoroastrianism, Judaism and the Bahá'í Faith.
+    <>
+      <Card ref={ref} css={inView ? animation : {}} sx={{display:{xs:'none', sm:'flex', md:'flex'}, borderRadius:'16px', boxShadow:1, height:'300px'}}>
+        <CardMedia
+          component="img"
+          sx={{ display:'flex', width:'30%', height:'300px' }}
+          image={image}
+          alt="LodhiGarden"
+        />
+        <Box sx={{ display: 'flex', flexDirection: 'column', height:'300px', maxHeight:"300px", p:2}}>
+          <Box sx={{ display:'flex', flexDirection:'column', px: 2, mb: 2 }}>
+            <Typography component="div" variant="h4" fontWeight="bold">
+              {tourTitle}
             </Typography>
-            <Box sx={{display:'flex', flexDirection:'row', mt:2}}>
-                <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} sx={{mb:2}} readOnly />
-                <Typography>20 reviews</Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              {tourLocation}
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection:'row', alignItems: 'flex-end', justifyContent:'center', maxHeight:"80%", px: 2}}>
+            <Box sx={{display:'flex', flexDirection:'column', width:'80%', maxHeight:"200px", pr:2}}>
+              <Typography variant="paragraph" color="text.secondary" sx={{lineHeight:1.4, height:'140px', maxHeight:"140px", overflow: 'hidden'}} component="div">
+                {tourDescription}
+              </Typography>
+              <Box sx={{display:'flex', flexDirection:'row', mt:1}}>
+                  <Rating name="half-rating-read" defaultValue={rating} precision={0.5} sx={{mb:2}} readOnly />
+                  <Typography>{reviews} reviews</Typography>
+              </Box>
+            </Box>
+            <Box sx={{display:'flex', flexDirection:'column', width:'20%', mb:1, mr:1}}>
+              <Typography sx={{lineHeight:0.9, pl:2}} gutterBottom={false}>
+                from <br/>
+              </Typography>
+              <Typography sx={{color:'primary.main', fontSize:'24px', fontWeight:'bold',pl:2, lineHeight:1.0}} gutterBottom={false}>{price}<br/></Typography>
+              <Typography sx={{lineHeight:0.8, pl:2, pb:2}}>per adult</Typography>
+              <Button variant="outlined" sx={{width:'100px'}}>Book Now</Button>
             </Box>
           </Box>
-          <Box sx={{display:'flex', flexDirection:'column', pb:2}}>
-            <Typography sx={{lineHeight:0.9, pl:2}} gutterBottom={false}>
-              from <br/>
+        </Box>
+      </Card>
+      <Card css={inView ? animation : {}} sx={{display:{xs:'flex', sm:'none', md:'none'}, width:'90%', borderRadius:'16px'}}>
+        <Box>
+          <CardMedia
+            component="img"
+            height="220"
+            image={image}
+            alt="Tourist Attraction"
+          />
+          <Box sx={{p:2}}>
+            <Typography gutterBottom variant="body1" textAlign="center" component="div" sx={{color:'text.primary', fontWeight:'bold'}}>
+              {tourTitle}
             </Typography>
-            <Typography sx={{color:'primary.main', fontSize:'24px', fontWeight:'bold',pl:2, lineHeight:1.0}} gutterBottom={false}>₹1550<br/></Typography>
-            <Typography sx={{lineHeight:0.8, pl:2, pb:2}}>per adult</Typography>
-            <Button variant="outlined" sx={{width:'100px'}}>Book Now</Button>
+            <Typography variant="subtitle2" textAlign="justify" color="text.secondary" sx={{lineHeight:1.4, textOverflow:'ellipsis'}} component="div">
+              {tourDescription}
+            </Typography>
+            <Box sx={{display:'flex', justifyContent:'center', width:'100%', mt:2}}>
+                <Rating name="half-rating-read" defaultValue={rating} precision={0.5} size="small" readOnly />
+                <Typography sx={{fontSize:'12px'}}>{reviews} reviews</Typography>
+            </Box>
+            <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', width:'100%', mt:1}}>
+                <Typography sx={{fontSize:'14px', mb:1}}>
+                  from <Box component='span' color="primary.main" sx={{fontSize:'18px', fontWeight:'bold'}}>{price}</Box>  per adult
+                </Typography>
+                <Button variant="outlined" sx={{width:'100px'}}>Book Now</Button>
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Card>
+      </Card>
+    </>
   )
 }
 

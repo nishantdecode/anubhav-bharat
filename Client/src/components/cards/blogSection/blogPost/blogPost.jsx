@@ -1,11 +1,12 @@
+/** @jsxImportSource @emotion/react */
+import { useInView } from 'react-intersection-observer';
 import { Grid, Card, CardActionArea, CardMedia, Box, Typography, Button, Avatar } from '@mui/material'
-import React from 'react'
-// import { Link } from 'react-router-dom'
 
-const BlogPost = ({image, heading, desc, avatar, author, date}) => {
+const BlogPost = ({image, heading, desc, avatar, author, date, animation}) => {
+  const { ref, inView } = useInView();
   return (
     <>
-        <Grid container rowSpacing={1}>
+        <Grid ref={ref} css={inView ? animation : {}} container rowSpacing={1}>
             <Grid item xs={12} sm={12} md={5} lg={5} sx={{display:'flex'}}>
                 <Box sx={{width:'100%', display:'flex', p:2, justifyContent:{ xs:'center', sm:'centre', md:'flex-start', lg:'flex-start'}}}>
                     <Card sx={{ borderRadius:'16px' }}>
