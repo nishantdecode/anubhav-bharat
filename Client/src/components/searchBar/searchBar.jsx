@@ -3,14 +3,20 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { Box, TextField, MenuItem, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-import ExploreIcon from '@mui/icons-material/Explore';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import { MobileDatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
-import Bg from "../../images/searchBg.jpg"
+import Activities from "../../images/activitiesBg.jpg"
+import Culture from "../../images/cultureBg.jpg"
+import Heritage from "../../images/heritageBg.jpg"
+import Eco from "../../images/ecoBg.jpeg"
+import Food from "../../images/foodBg.webp"
+import Outdoor from "../../images/yogaBg.jpg"
+import Adventure from "../../images/trekkingBg.jpg"
 
 const locations =[ 'New Delhi', 'North Delhi', 'South Delhi'];
 const categoryOptions = ['Cultural Tourism', 'Heritage Tourism', 'Eco Tours', 'Food Tourism', 'Outdoor Activities', 'Adventure Tourism'];
@@ -24,6 +30,33 @@ const SearchBar = () => {
   let destination = params.destination
   let category = params.category
   let date = searchParams.get('date')
+  let bgImage = Activities
+
+  if(category){
+    switch (category) {
+      case "Cultural Tourism":
+        bgImage = Culture
+        break;
+      case "Heritage Tourism":
+        bgImage = Heritage
+        break;
+      case "Eco Tours":
+        bgImage = Eco
+        break;
+      case "Food Tourism":
+        bgImage = Food
+        break;
+      case "Outdoor Activities":
+        bgImage = Outdoor
+        break;
+      case "Adventure Tourism":
+        bgImage = Adventure
+        break;
+      default:
+        bgImage = Activities
+        break;
+    }
+  }
 
   if(destination === "activities")
     destination = 'New Delhi'
@@ -41,11 +74,11 @@ const SearchBar = () => {
   };
 
     return (
-          <Box sx={{display:'flex', width: '100%', height:'400px', justifyContent:'center', alignItems:'center', backgroundImage:`url(${Bg})`, backgroundRepeat: "no-repeat", backgroundPosition: "bottom right", backgroundSize: "cover", backgroundAttachment: "fixed", borderRadius:{sm:'0px', md:'16px'}}}>
+          <Box sx={{display:'flex', width: '100%', height:'400px', justifyContent:'center', alignItems:'center', backgroundImage:`url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundPosition: "50% 0%", backgroundSize:"cover", backgroundAttachment: "fixed", borderRadius:{sm:'0px', md:'16px'}}}>
                 <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'column', md:'row'}, width:{xs:'80%', sm:'70%', md:'auto'}, px:3, pt:3, backgroundColor:'background.default', borderRadius:'16px', boxShadow:1}}>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <Box sx={{display:'flex', mt:1.5, mb:{xs:1, sm:1, md:0},  width:{xs:'100%', sm:'100%', md:'180px'}}}>
-                      <LocationOnIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
+                      <LocationOnOutlinedIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
                       <TextField
                         name="location"
                         label="Location"
@@ -78,7 +111,7 @@ const SearchBar = () => {
                     </Box>
                     <Box sx={{display:'flex', width:{xs:'90%', sm:'90%', md:'1px'} , height:{xs:'1px', sm:'1px', md:'32px'}, backgroundColor:'#CDCDCD', border:'none', mt:{sm:0, md:1.5}, mb:{xs:2, sm:2, md:0}, mx:3}}/>
                     <Box sx={{display:'flex', mt:1.5, mb:{xs:1, sm:1, md:0},  width:{xs:'100%', sm:'100%', md:'220px'}}}>
-                      <ExploreIcon sx={{color:'primary.main', width:{sm:'22px', md:'30px'}, height:{sm:'22px', md:'30px'}}}/>
+                      <ExploreOutlinedIcon sx={{color:'primary.main', width:{sm:'22px', md:'30px'}, height:{sm:'22px', md:'30px'}}}/>
                       <TextField
                         name="categories"
                         label="Categories"
@@ -111,7 +144,7 @@ const SearchBar = () => {
                     </Box>
                     <Box sx={{display:'flex', width:{xs:'90%', sm:'90%', md:'1px'} , height:{xs:'1px', sm:'1px', md:'32px'}, backgroundColor:'#CDCDCD', border:'none', mt:{sm:0, md:1.5}, mb:{xs:2, sm:2, md:0}, mx:3}}/>
                     <Box sx={{display:'flex', mt:1.5, width:{xs:'100%', sm:'100%', md:'180px'}}}>
-                      <CalendarMonthIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
+                      <CalendarMonthOutlinedIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
                       <MobileDatePicker
                         name="date"
                         label="Date"

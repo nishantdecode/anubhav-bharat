@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Grid, Box, Container, TextField, MenuItem, Button } from "@mui/material";
 import { MobileDatePicker } from "@mui/x-date-pickers";
 import SearchIcon from '@mui/icons-material/Search';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import { useNavigate } from "react-router-dom";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -40,7 +40,7 @@ return (
           <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'column', md:'row'}, width:{xs:'90%', sm:'70%', md:'auto'}, px:2, pt:3, ml:{sm:0, md:2}, backgroundColor:'background.default', borderRadius:'16px', boxShadow:1}}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <Box sx={{display:'flex', mt:1, mb:{xs:1, sm:1, md:0},  width:{xs:'100%', sm:'100%', md:'180px'}}}>
-                <LocationOnIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
+                <LocationOnOutlinedIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
                 <TextField
                   name="location"
                   label="Location"
@@ -73,7 +73,7 @@ return (
               </Box>
               <Box sx={{display:'flex', width:{xs:'90%', sm:'90%', md:'1px'} , height:{xs:'1px', sm:'1px', md:'32px'}, backgroundColor:'#CDCDCD', border:'none', mt:{sm:0, md:1.5}, mb:{xs:2, sm:2, md:0}, mx:3}}/>
               <Box sx={{display:'flex', mt:1, width:{xs:'100%', sm:'100%', md:'180px'}}}>
-                <CalendarMonthIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
+                <CalendarMonthOutlinedIcon sx={{color:'primary.main', width:{sm:'24px', md:'32px'}, height:{sm:'24px', md:'32px'}}}/>
                 <MobileDatePicker
                   name="date"
                   label="Date"

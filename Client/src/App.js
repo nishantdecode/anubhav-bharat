@@ -18,6 +18,7 @@ import { lightTheme } from "./themes/light.js";
 import { baseTheme } from "./themes/base.js";
 import { ColorContext } from "./context/ColorContext.js";
 import Tours from './pages/tours/tours.jsx';
+import Tourpage from './pages/tourPage/tourpage';
 
 
 function App() {
@@ -46,9 +47,10 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="/:destination" element={<Activities/>}/>
               <Route path="/:destination/:category" element={<Tours/>}/>
+              <Route path="/tourpage" element={<Tourpage/>}/>
               <Route path="/food" element={<Food/>}/>
               <Route path="/blogs" element={<Blogs/>}/>
-              <Route path="/blog/:blogpage" element={<Blogpage/>}/>
+              <Route path="/blogs/:blogpage" element={<Blogpage/>}/>
               <Route path="/contact" element={<Contact/>}/>
             </Routes>
           </Container>

@@ -14,12 +14,9 @@ const BookTourCard = ({image, tourTitle, tourLocation, tourDescription, reviews,
           alt="LodhiGarden"
         />
         <Box sx={{ display: 'flex', flexDirection: 'column', height:'300px', maxHeight:"300px", p:2}}>
-          <Box sx={{ display:'flex', flexDirection:'column', px: 2, mb: 2 }}>
+          <Box sx={{ display:'flex', flexDirection:'column', px: 2, mb: 2, height:'20%' }}>
             <Typography component="div" variant="h4" fontWeight="bold">
               {tourTitle}
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
-              {tourLocation}
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', flexDirection:'row', alignItems: 'flex-end', justifyContent:'center', maxHeight:"80%", px: 2}}>

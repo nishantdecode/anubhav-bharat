@@ -15,7 +15,7 @@ const Tours = [
         category: 'Cultural Tourism',
         tourTitle: 'New Delhi and Old Delhi City Tour',
         tourLocation: 'New Delhi',
-        tourDescription: 'This diversity is also visible in the spheres of religion. The major religions of India are Hinduism (majority religion), Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism.',
+        tourDescription: 'This diversity is also visible in the spheres of religion. The major religions of India are Hinduism (majority religion), Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism. This diversity is also visible in the spheres of religion. The major religions of India are Hinduism (majority religion), Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism.',
         language: ['hindi'],
         reviews: '20',
         rating: 4.5,

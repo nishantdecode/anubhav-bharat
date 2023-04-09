@@ -107,7 +107,7 @@ const TourContent = () => {
       </Modal>
       <Box gap={4} sx={{display:'flex', justifyContent:'center', width:'100%'}}>
         <Box sx={{display:{xs:'none', sm:'none' , md:'block'}, width:'25%'}}>
-          <Paper sx={{px:5, py:5, boxShadow:1, borderRadius:'16px', mr:2}}>
+          <Paper sx={{px:'15%', py:5, boxShadow:1, borderRadius:'16px', mr:2}}>
             <FilterPanel
               languageOptions = {languageOptions}
               languages = {languages}
