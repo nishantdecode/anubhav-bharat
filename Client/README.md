@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/nishant-decode/AnubhavBharat/tree/master/Client">
-    <img src="src/images/logo.jpeg" alt="Logo" width="80" height="80">
+    <img src="src/images/logo.jpeg" alt="Logo" width="325" height="80">
   </a>
 
   <h3 align="center">Anubhav Bharat</h3>
