@@ -19,6 +19,7 @@ import { baseTheme } from "./themes/base.js";
 import { ColorContext } from "./context/ColorContext.js";
 import Tours from './pages/tours/tours.jsx';
 import Tourpage from './pages/tourPage/tourpage';
+import ScrollToTop from './components/scrollToTop/scrollToTop';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Container maxWidth="false" disableGutters >
+            <ScrollToTop/>
             <CssBaseline enableColorScheme />
             <Routes>
               <Route path="/" element={<Home/>}/>

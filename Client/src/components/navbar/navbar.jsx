@@ -129,8 +129,7 @@ function Navbar({active="Home"}) {
         {user ? (
         <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'none', lg:'flex'}, justifyContent: 'center'}}>
-                <ShoppingBasketIcon sx={{color: 'primary.main', height:"100%"}} />
-                <Button variant="text" >Basket</Button>
+                <Button variant="text" ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
             <Tooltip title="Open settings" sx={{ display: 'flex'}}>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -155,8 +154,7 @@ function Navbar({active="Home"}) {
         <>
         <Box sx={{ flexGrow: 0, display: { xs: 'flex', md:'none'}, justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'none', lg:'flex'}, justifyContent: 'center'}}>
-                <ShoppingBasketIcon sx={{color: 'primary.main', height:"100%"}} />
-                <Button variant="text" >Basket</Button>
+                <Button variant="text" ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
             <Tooltip title="Open settings" sx={{ display: 'flex'}}>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -180,8 +178,7 @@ function Navbar({active="Home"}) {
         </Box>
         <Box sx={{ flexGrow: 0, display: { xs:'none', md: 'flex'}, justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'flex', lg:'flex'}, justifyContent: 'center', width: '50%'}} disableGutters>
-                <ShoppingBasketIcon sx={{color: 'primary.main', height:"100%"}} />
-                <Button variant="text" sx={{pr:3}} >Basket</Button>
+                <Button variant="text" sx={{pr:2}} ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
             <Button variant="register" sx={{display: { xs: 'flex', md: 'flex' }}} >Register</Button>
         </Box>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Button, Paper, Modal, Typography } from "@mui/material";
-import BookTourCard from '../bookTourCard/bookTourCard.jsx'
+import BookTourCard from './bookTourCard/bookTourCard.jsx'
 import { useState, useEffect } from "react"
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import TuneIcon from '@mui/icons-material/Tune';
 import { css, keyframes } from "@emotion/react";
 
 import {languageOptions, durationOptions} from "../../../data/options.js"
-import FilterPanel from '../filterPanel/filterPanel.jsx';
+import FilterPanel from './filterPanel/filterPanel.jsx';
 import Tours from '../../../data/tours.js';
 
 function valueLabelFormat(value) {
@@ -62,21 +62,29 @@ const TourContent = () => {
       )
     })
   }
-  
+
   if (duration.length) {
     filteredTours = filteredTours.filter((tour) => 
       duration.includes(String(tour.duration))
     );
   }
 
-
   filteredTours = filteredTours.filter(
     (tour) => tour.price <= price
-  );  
+  );
+
+  console.log(filteredTours) 
 
   useEffect(() => {
+    let searchQuery = ``
+    if(languages.length)
+      searchQuery = searchQuery + `&language=${languages}`
+    if(price !== 1000)
+      searchQuery = searchQuery + `&price=${price}`
+    if(duration.length)
+      searchQuery = searchQuery + `&duration=${duration}`
     if(languages && duration)
-      navigate(`/${destination}/${category}/?date=${date}&language=${languages}&price=${price}&duration=${duration}`);
+      navigate(`/${destination}/${category}/?date=${date}${searchQuery}`);
   }, [languages, duration, price, category, destination, date, navigate]);
 
   return (
@@ -89,7 +97,7 @@ const TourContent = () => {
         open={open}
         onClose={handleClose}
       >
-        <Box sx={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width:{xs:'70%', sm:'50%'}}}>
+        <Box sx={{position: 'absolute', top: '50%', left: '50%', height:'90%', display:'block', overflowY:'scroll', transform: 'translate(-50%, -50%)', width:{xs:'70%', sm:'50%'}}}>
           <Paper sx={{px:5, py:3, boxShadow:1, borderRadius:'10px'}}>
             <FilterPanel
               languageOptions = {languageOptions}
@@ -101,6 +109,7 @@ const TourContent = () => {
               durationOptions = {durationOptions}
               duration = {duration}
               setDuration = {setDuration}
+              onClose = {handleClose}
             />
           </Paper>
         </Box>
@@ -123,7 +132,7 @@ const TourContent = () => {
         </Box>
         <Box gap={3} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'flex-start', width:{xs:'100%', sm:'90%', md:'75%'}}}>
           {filteredTours.map((tour)=>{
-            return <BookTourCard key={tour.tourId} image={tour.image} tourTitle={tour.tourTitle} tourLocation={tour.tourLocation} tourDescription={tour.tourDescription} reviews={tour.reviews} rating={tour.rating} price={tour.price} animation={animatedItem}/>
+            return <BookTourCard key={tour.tourId} tourId={tour.tourId} image={tour.image} tourTitle={tour.tourTitle} tourLocation={tour.tourLocation} tourDescription={tour.tourDescription} reviews={tour.reviews} rating={tour.rating} price={tour.price} animation={animatedItem}/>
           })}
         </Box>
       </Box>
