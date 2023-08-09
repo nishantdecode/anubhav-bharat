@@ -10,15 +10,14 @@ import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
 import StoreIcon from '@mui/icons-material/Store';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import InputIcon from '@mui/icons-material/Input';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import logo from '../../images/logo.jpeg'
 import { NavbarContainer, NavbarLogo, CustomMenuIcon } from './navbar.js'
 import { useNavigate } from 'react-router-dom';
 
 const pages = ['Home', 'Activities', 'Store', 'Food', 'Blogs', 'Contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-const options = ['Basket', 'Register', 'Login'];
-const user = false;
+const user = localStorage.getItem('user');
 
 function Navbar({active="Home"}) {
     //navbar navigation function
@@ -45,9 +44,13 @@ function Navbar({active="Home"}) {
     const handleCloseUserMenu = () => {
       setAnchorElUser(null);
     };
+    const handleLogout = () => {
+      localStorage.removeItem('user');
+      window.location.href='http://localhost:3000/'
+    };
     const [mobileMenu, setMobileMenu] = useState({
-        left: false,
-      });
+      left: false,
+    });
     
     //Site menu functions
     const toggleDrawer = (anchor, open) => (event) => {
@@ -129,11 +132,11 @@ function Navbar({active="Home"}) {
         {user ? (
         <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'none', lg:'flex'}, justifyContent: 'center'}}>
-                <Button variant="text" ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
+                <Button variant="text" onClick={()=>{navigate('/basket')}}><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
             <Tooltip title="Open settings" sx={{ display: 'flex'}}>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar sx={{borderRadius: '5px'}}alt="User" src="./" />
+                <Avatar sx={{borderRadius: '5px'}}alt="User" src="./"><AccountCircleIcon/></Avatar>
               </IconButton>
             </Tooltip>
             <Menu sx={{ mt: '45px' }} 
@@ -144,17 +147,18 @@ function Navbar({active="Home"}) {
               transformOrigin={{   vertical: 'top',   horizontal: 'right', }} 
               open={Boolean(anchorElUser)} 
               onClose={handleCloseUserMenu}>
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={()=>{navigate('/basket')}}>
+                <Typography textAlign="center">Basket</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleLogout}>
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
         </Box>) : (
         <>
         <Box sx={{ flexGrow: 0, display: { xs: 'flex', md:'none'}, justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'none', lg:'flex'}, justifyContent: 'center'}}>
-                <Button variant="text" ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
+                <Button variant="text" onClick={()=>{navigate('/basket')}}><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
             <Tooltip title="Open settings" sx={{ display: 'flex'}}>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -169,18 +173,19 @@ function Navbar({active="Home"}) {
               transformOrigin={{   vertical: 'top',   horizontal: 'right', }} 
               open={Boolean(anchorElUser)} 
               onClose={handleCloseUserMenu}>
-              {options.map((option) => (
-                <MenuItem key={option} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{option}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={()=>{navigate('/basket')}}>
+                <Typography textAlign="center">Basket</Typography>
+              </MenuItem>
+              <MenuItem onClick={()=>{navigate('/register')}}>
+                <Typography textAlign="center">Register</Typography>
+              </MenuItem>
             </Menu>
         </Box>
         <Box sx={{ flexGrow: 0, display: { xs:'none', md: 'flex'}, justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'flex', lg:'flex'}, justifyContent: 'center', width: '50%'}} disableGutters>
                 <Button variant="text" sx={{pr:2}} ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
-            <Button variant="register" sx={{display: { xs: 'flex', md: 'flex' }}} >Register</Button>
+            <Button variant="register" sx={{display: { xs: 'flex', md: 'flex' }}} onClick={()=> handleNavigation("register")}>Register</Button>
         </Box>
         </>
         )}

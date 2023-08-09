@@ -20,6 +20,8 @@ import { ColorContext } from "./context/ColorContext.js";
 import Tours from './pages/tours/tours.jsx';
 import Tourpage from './pages/tourPage/tourpage';
 import ScrollToTop from './components/scrollToTop/scrollToTop';
+import Register from './pages/register/register';
+import Basket from './pages/basket/basket';
 
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
             <CssBaseline enableColorScheme />
             <Routes>
               <Route path="/" element={<Home/>}/>
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/basket" element={<Basket/>}/>
               <Route path="/:destination" element={<Activities/>}/>
               <Route path="/:destination/:category" element={<Tours/>}/>
               <Route path="/tourpage" element={<Tourpage/>}/>
