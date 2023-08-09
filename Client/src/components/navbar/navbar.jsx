@@ -46,7 +46,7 @@ function Navbar({active="Home"}) {
     };
     const handleLogout = () => {
       localStorage.removeItem('user');
-      window.location.href='https://anubhav-bharat-nishant-decode.vercel.app/'
+      window.location.href='http://localhost:3000/'
     };
     const [mobileMenu, setMobileMenu] = useState({
       left: false,
@@ -183,7 +183,7 @@ function Navbar({active="Home"}) {
         </Box>
         <Box sx={{ flexGrow: 0, display: { xs:'none', md: 'flex'}, justifyContent: 'center' }}>
             <Container sx={{ display: { xs: 'none', md: 'flex', lg:'flex'}, justifyContent: 'center', width: '50%'}} disableGutters>
-                <Button variant="text" sx={{pr:2}} ><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
+                <Button variant="text" sx={{pr:2}} onClick={()=>{navigate('/basket')}}><ShoppingBasketIcon sx={{color: 'primary.main', height:"90%", mr:1}}/>Basket</Button>
             </Container>
             <Button variant="register" sx={{display: { xs: 'flex', md: 'flex' }}} onClick={()=> handleNavigation("register")}>Register</Button>
         </Box>
