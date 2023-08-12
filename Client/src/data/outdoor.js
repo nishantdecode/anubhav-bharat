@@ -5,6 +5,7 @@ import Yoga4 from '../images/yog5.jpg'
 
 const OutdoorActivities = [
     {
+        tourId: '001',
         img: Yoga1,
         Heading: 'Tour of Humayun\'s Tomb - The last refuge of Mughal Emperor .',
         SubHeading: 'Mathura Road, Eastern Delhi',
@@ -12,6 +13,7 @@ const OutdoorActivities = [
         price:'₹550'
     },
     {
+        tourId: '002',
         img: Yoga2,
         Heading: 'Old Delhi Food Tour -  Experience the best of Delhi Street Food.',
         SubHeading: 'Chandni Chowk, New Delhi',
@@ -19,6 +21,7 @@ const OutdoorActivities = [
         price:'₹450'
     },
     {
+        tourId: '003',
         img: Yoga3,
         Heading: 'Delhi Urban EcoTourism -  Experience Delhi\'s Natural Beauty.',
         SubHeading: 'Chandni Chowk, New Delhi',
@@ -26,6 +29,7 @@ const OutdoorActivities = [
         price:'₹350'
     },
     {
+        tourId: '004',
         img: Yoga4,
         Heading: 'The Red Fort Complex was built as the palace fort of Shahjahanabad.',
         SubHeading: 'Chandni Chowk, New Delhi',
@@ -33,6 +37,7 @@ const OutdoorActivities = [
         price:'₹400'
     },
     {
+        tourId: '005',
         img: Yoga3,
         Heading: 'Delhi Urban EcoTourism -  Experience Delhi\'s Natural Beauty.',
         SubHeading: 'Chandni Chowk, New Delhi',
@@ -40,6 +45,7 @@ const OutdoorActivities = [
         price:'₹340'
     },
     {
+        tourId: '006',
         img: Yoga1,
         Heading: 'Tour of Humayun\'s Tomb - The last refuge of Mughal Emperor .',
         SubHeading: 'Mathura Road, Eastern Delhi',
@@ -47,6 +53,7 @@ const OutdoorActivities = [
         price:'₹560'
     },
     {
+        tourId: '007',
         img: Yoga4,
         Heading: 'The Red Fort Complex was built as the palace fort of Shahjahanabad.',
         SubHeading: 'Chandni Chowk, New Delhi',
@@ -54,6 +61,7 @@ const OutdoorActivities = [
         price:'₹410'
     },
     {
+        tourId: '008',
         img: Yoga2,
         Heading: 'Old Delhi Food Tour -  Experience the best of Delhi Street Food.',
         SubHeading: 'Chandni Chowk, New Delhi',

@@ -8,7 +8,6 @@ import { deepmerge } from '@mui/utils';
 import './App.css';
 import Home from "./pages/home/home.jsx";
 import Activities from "./pages/activities/activities.jsx";
-import Food from "./pages/food/food.jsx";
 import Blogs from "./pages/blogs/blogs.jsx";
 import Contact from "./pages/contact/contact.jsx";
 import Blogpage from "./pages/blogpage/blogpage.jsx"
@@ -54,9 +53,8 @@ function App() {
               <Route path="/:destination" element={<Activities/>}/>
               <Route path="/:destination/:category" element={<Tours/>}/>
               <Route path="/tourpage" element={<Tourpage/>}/>
-              <Route path="/food" element={<Food/>}/>
               <Route path="/blogs" element={<Blogs/>}/>
-              <Route path="/blogs/:blogpage" element={<Blogpage/>}/>
+              <Route path="/blogpage" element={<Blogpage/>}/>
               <Route path="/contact" element={<Contact/>}/>
             </Routes>
           </Container>

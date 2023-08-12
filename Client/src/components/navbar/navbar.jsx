@@ -7,8 +7,6 @@ import ContactsIcon from "@mui/icons-material/Contacts";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import ArticleIcon from '@mui/icons-material/Article';
 import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
-import StoreIcon from '@mui/icons-material/Store';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import InputIcon from '@mui/icons-material/Input';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
@@ -16,7 +14,7 @@ import logo from '../../images/logo.jpeg'
 import { NavbarContainer, NavbarLogo, CustomMenuIcon } from './navbar.js'
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Home', 'Activities', 'Store', 'Food', 'Blogs', 'Contact'];
+const pages = ['Home', 'Activities', 'Blogs', 'Contact'];
 const user = localStorage.getItem('user');
 
 function Navbar({active="Home"}) {
@@ -46,7 +44,7 @@ function Navbar({active="Home"}) {
     };
     const handleLogout = () => {
       localStorage.removeItem('user');
-      window.location.href='http://localhost:3000/'
+      window.location.href='https://anubhav-bharat-nishant-decode.vercel.app/'
     };
     const [mobileMenu, setMobileMenu] = useState({
       left: false,
@@ -77,10 +75,8 @@ function Navbar({active="Home"}) {
                   <ListItemIcon>
                     {index === 0 && <HomeIcon sx={{color: 'primary.main'}} />}
                     {index === 1 && <ModeOfTravelIcon sx={{color: 'primary.main'}}/>}
-                    {index === 2 && <StoreIcon sx={{color: 'primary.main'}}/>}
-                    {index === 3 && <LocalDiningIcon sx={{color: 'primary.main'}}/>}
-                    {index === 4 && <ArticleIcon sx={{color: 'primary.main'}}/>}
-                    {index === 5 && <ContactsIcon sx={{color: 'primary.main'}}/>}
+                    {index === 2 && <ArticleIcon sx={{color: 'primary.main'}}/>}
+                    {index === 3 && <ContactsIcon sx={{color: 'primary.main'}}/>}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>

@@ -4,10 +4,10 @@ import { Grid } from '@mui/material'
 import DisplayCard from './displayCard/displayCard.jsx'
 
 
-const DisplayCardRow = ({data, titleHeading, titleDesc}) => {
+const DisplayCardRow = ({data, titleHeading, titleDesc, nav}) => {
     return (
       <>
-          <Title heading={titleHeading} desc={titleDesc} />
+          <Title heading={titleHeading} desc={titleDesc} nav={nav} />
           <Grid container rowSpacing={2}>
                 {data.map((card) => {
                     return (

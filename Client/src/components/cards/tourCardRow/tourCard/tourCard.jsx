@@ -2,9 +2,12 @@ import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/m
 import React from 'react'
 import StarIcon from '@mui/icons-material/Star';
 
-const TourCard = ({image, heading, subHeading, rating, price}) => {
+import { useNavigate } from 'react-router-dom';
+
+const TourCard = ({tourId, image, heading, subHeading, rating, price}) => {
+  const navigate = useNavigate();
   return (
-    <Card sx={{ width:'250px', borderRadius:'16px'}}>
+    <Card sx={{ width:'250px', borderRadius:'16px'}} onClick={()=>{navigate(`/tourPage/?tourId=${tourId}`)}}>
       <CardActionArea>
         <CardMedia
           component="img"

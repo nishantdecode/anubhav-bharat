@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
-import { Box, Button, ButtonGroup, TextField, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup, TextField, Typography, Modal } from '@mui/material'
 import { MobileDateTimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -9,6 +9,19 @@ import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined
 import GroupsIcon from '@mui/icons-material/Groups';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import BeenhereIcon from '@mui/icons-material/Beenhere';
+
+const style = {
+  display:'flex',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width:{xs:'90%', sm:'70%', md:400},
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 const BookingForm = () => {
   const [searchParams] = useSearchParams()
@@ -20,15 +33,16 @@ const BookingForm = () => {
 
   const navigate = useNavigate();
 
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setOpen(false);
+
   const addToBasket = () => {
     const basketTours = localStorage.getItem('basket');
-    const basketObj = [
-      {
+    const basketObj = {
         tourId: tourId,
         dateTime: selectedDate,
         adults: counter
       }
-    ]
     if(basketTours) {
       const basket = JSON.parse(basketTours);
       const tourAdded = basket.find(tour => tour.tourId === tourId);
@@ -38,9 +52,10 @@ const BookingForm = () => {
         localStorage.setItem('basket', newBasketObj);
       }
     } else {
-      const newBasketObj = JSON.stringify(basketObj);
+      const newBasketObj = JSON.stringify([basketObj]);
       localStorage.setItem('basket', newBasketObj);
     }
+    setOpen(true);
   }
   const handleSearch = () => {
     navigate(`/?date=${selectedDate}`);
@@ -100,6 +115,21 @@ const BookingForm = () => {
           <Button variant='register' sx={{color: 'primary', width:{xs:'100%', sm:'100%', md:'100%'},height:'56px', mb:2}} onClick={handleSearch}>
             <BeenhereIcon sx={{mr:1}}/> Reserve Now
           </Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{mr:2}}>
+                Added to basket
+              </Typography>
+              <Button onClick={() => navigate('/basket')} variant='outlined' sx={{color: 'primary', width:{xs:'70%', sm:'60%', md:'50%'},height:'36px', p:2}}>
+                <ShoppingBasketIcon sx={{mr:1}}/> View Basket
+              </Button>
+            </Box>
+          </Modal>
         </LocalizationProvider>
       </Box>                    
     </Box>

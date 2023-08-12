@@ -32,13 +32,13 @@ const Home = () => {
             <MoreInfo/>
           </Grid>
           <Grid item xs={12} md={10} lg={10} xl={8}>
-            <DisplayCardRow data={TouristAttractions}  titleHeading="PLACES TO VISIT" titleDesc="The amazing places around India!" />
+            <DisplayCardRow data={TouristAttractions} nav="/activities"  titleHeading="PLACES TO VISIT" titleDesc="The amazing places around India!" />
           </Grid>
           <Grid item xs={12} md={10} lg={10} xl={8}>
-            <DisplayCardRow data={BharatStore}  titleHeading="THE BHARAT STORE" titleDesc="Welcome to Indian Handicrafts!" />
+            <DisplayCardRow data={BharatStore} nav="/activities" titleHeading="THE BHARAT STORE" titleDesc="Welcome to Indian Handicrafts!" />
           </Grid>
           <Grid item xs={12} md={10} lg={10} xl={8}>
-            <DisplayCardRow data={FoodChoices}  titleHeading="ANUBHAV FOOD SELECTION" titleDesc="Experience best Indian foods!" />
+            <DisplayCardRow data={FoodChoices} nav="/activities" titleHeading="ANUBHAV FOOD SELECTION" titleDesc="Experience best Indian foods!" />
           </Grid>
           <Grid item xs={12} md={10} lg={10} xl={8}>
             <BlogSection/>

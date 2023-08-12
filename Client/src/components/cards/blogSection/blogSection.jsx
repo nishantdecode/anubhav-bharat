@@ -61,25 +61,28 @@ const blogCards=[
     heading: 'India is a land of diversities.',
     desc: 'This diversity is also visible in the spheres of religion. The major religions of India are Hinduism (majority religion), Islam (largest minority religion), Sikhism, Christianity, Buddhism, Jainism, Zoroastrianism, Judaism and the Bahá\'í Faith.',
     date: "30/10/2022",
-    author: "Shahzeb Dalal",
+    author: "Vikram",
     image: culture,
-    animation: animatedItem1
+    animation: animatedItem1,
+    blogId: '001'
   },
   {
     heading: 'Adventure Activities in India.',
     desc: 'Treks: You can trek at a number of destinations like Ladakh, Uttarakhand, Sikkim, Himachal Pradesh and Kashmir. Motor Bike Expeditions: Biking trips on the Leh-Manali highway and through South and West India are hosted by loads of travel agencies as they are highly admired.',
     date: "30/10/2022",
-    author: "Shahzeb Dalal",
+    author: "Prince",
     image: trek,
-    animation: animatedItem2
+    animation: animatedItem2,
+    blogId: '002'
   },
   {
     heading: 'Spiritual Significance of India',
     desc: 'In India spirituality and religion are part of people\'s everyday life. Personal devotional belief, rituals and temple worship, have created the most amazing architecture. India is known for its rich past and cultural heritage.',
     date: "30/10/2022",
-    author: "Shahzeb Dalal",
+    author: "Zubair",
     image: spiritual,
-    animation: animatedItem3
+    animation: animatedItem3,
+    blogId: '003'
   }
 ]
 
@@ -91,7 +94,7 @@ const BlogSection = () => {
             {blogCards.map((blog) => {
               return(
                 <Grid key={blog.image} item xs={12} sm={6} md={12} lg={12} sx={{display:'flex'}}>
-                  <BlogPost animation={blog.animation} image={blog.image} heading={blog.heading} desc={blog.desc} avatar={avatar} author={blog.author} date={blog.date} />
+                  <BlogPost blogId={blog.blogId} animation={blog.animation} image={blog.image} heading={blog.heading} desc={blog.desc} avatar={avatar} author={blog.author} date={blog.date} />
                 </Grid>
               )
             })}

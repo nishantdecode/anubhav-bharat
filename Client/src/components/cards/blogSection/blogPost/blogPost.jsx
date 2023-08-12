@@ -2,8 +2,12 @@
 import { useInView } from 'react-intersection-observer';
 import { Grid, Card, CardActionArea, CardMedia, Box, Typography, Button, Avatar } from '@mui/material'
 
-const BlogPost = ({image, heading, desc, avatar, author, date, animation}) => {
+import { useNavigate } from "react-router-dom";
+
+const BlogPost = ({image, heading, desc, avatar, author, date, animation, blogId}) => {
   const { ref, inView } = useInView();
+  const navigate = useNavigate();
+
   return (
     <>
         <Grid ref={ref} css={inView ? animation : {}} container rowSpacing={1}>
@@ -40,7 +44,7 @@ const BlogPost = ({image, heading, desc, avatar, author, date, animation}) => {
                     </Typography>
                     
                         
-                    <Button variant="outlined" sx={{display:{xs:'none', sm:'none', md:'flex', lg:'flex'}, color: 'primary.main', fontWeight:600, width:'100px', height:'50px'}} >Read More</Button>
+                    <Button variant="outlined" sx={{display:{xs:'none', sm:'none', md:'flex', lg:'flex'}, color: 'primary.main', fontWeight:600, width:'100px', height:'50px'}} onClick={() => navigate(`/blogpage/?blogId=${blogId}`)} >Read More</Button>
                 </Box>
             </Grid>
         </Grid>

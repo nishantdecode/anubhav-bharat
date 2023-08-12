@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 const TourCardRow = ({data, titleHeading, titleDesc}) => {
     return (
         <>
-            <Title heading={titleHeading} desc={titleDesc} />
+            <Title heading={titleHeading} desc={titleDesc} nav="/New%20Delhi/Cultural%20Tourism/?date=2022-04-17" />
             <Box sx={{display:{xs:'none', sm:'none', md:'flex', lg:'flex'}}}>
                 <Swiper
                   modules={[Navigation]}
@@ -25,7 +25,7 @@ const TourCardRow = ({data, titleHeading, titleDesc}) => {
                     {data.map((card) => {
                         return (
                             <SwiperSlide key={card.price}>
-                                <TourCard image={card.img} heading={card.Heading} subHeading={card.SubHeading} rating={card.rating} price={card.price}/>
+                                <TourCard tourId={card.tourId} image={card.img} heading={card.Heading} subHeading={card.SubHeading} rating={card.rating} price={card.price}/>
                             </SwiperSlide>
                         )
                     })}
@@ -35,7 +35,7 @@ const TourCardRow = ({data, titleHeading, titleDesc}) => {
                 {data.map((card) => {
                     return (
                         <Box key={card.price} sx={{m:2}}>
-                            <TourCard image={card.img} heading={card.Heading} subHeading={card.SubHeading} rating={card.rating} price={card.price}/>
+                            <TourCard tourId={card.tourId} image={card.img} heading={card.Heading} subHeading={card.SubHeading} rating={card.rating} price={card.price}/>
                         </Box>  
                     )
                 })}
