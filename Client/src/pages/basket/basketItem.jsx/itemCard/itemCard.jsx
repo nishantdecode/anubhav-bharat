@@ -16,7 +16,7 @@ const ItemCard = ({tourId, adults, date}) => {
     const newBasketObj = JSON.stringify(filteredBasket);
     localStorage.setItem('basket', newBasketObj);
     console.log(filteredBasket);
-    window.location.href='http://localhost:3000/basket'
+    window.location.href='https://anubhav-bharat-g6z56bxzv-nishant-decode.vercel.app/basket'
   }
   return (
       <>
