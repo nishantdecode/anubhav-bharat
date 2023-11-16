@@ -20,7 +20,7 @@ const SignUp = () => {
     }
     const newUserObj = JSON.stringify(userObj);
     localStorage.setItem('user', newUserObj);
-    window.location.href='http://localhost:3000/'
+    window.location.href='https://anubhav-bharat.vercel.app/'
   };
 
   const handleSearch = () => {

@@ -44,7 +44,7 @@ function Navbar({active="Home"}) {
     };
     const handleLogout = () => {
       localStorage.removeItem('user');
-      window.location.href='https://anubhav-bharat-g6z56bxzv-nishant-decode.vercel.app/'
+      window.location.href='https://anubhav-bharat.vercel.app/'
     };
     const [mobileMenu, setMobileMenu] = useState({
       left: false,
